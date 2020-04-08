@@ -30,6 +30,8 @@ import java.sql.ResultSet;
 public class InventoryManagerFrame extends javax.swing.JFrame {
 
        String versionID = "V1.1";
+       
+       private String databaseName = null;
 
     /** Creates new form AddInventoryMainFrame */
     public InventoryManagerFrame() {
@@ -39,6 +41,9 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         jRadioButton2.setSelected(false);
         jRadioButton3.setSelected(false);
         jRadioButton4.setSelected(false);
+        jRadioButton5.setSelected(false);
+        jRadioButton6.setSelected(false);
+        jRadioButton7.setSelected(false);
     }
 
     /** This method is called from within the constructor to
@@ -80,6 +85,9 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jRadioButton7 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -176,6 +184,27 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
             }
         });
 
+        jRadioButton5.setText("Trees");
+        jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton5ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton6.setText("Seeds");
+        jRadioButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton6ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton7.setText("Shrubs");
+        jRadioButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -228,6 +257,13 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jRadioButton7)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(jRadioButton5))
+                                            .addComponent(jRadioButton6, javax.swing.GroupLayout.Alignment.TRAILING))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jRadioButton1)
                                             .addComponent(jRadioButton2))
                                         .addGap(18, 18, 18)
@@ -270,15 +306,18 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton3))
+                            .addComponent(jRadioButton3)
+                            .addComponent(jRadioButton5)
+                            .addComponent(jRadioButton7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jRadioButton2)
-                            .addComponent(jRadioButton4)))
+                            .addComponent(jRadioButton4)
+                            .addComponent(jRadioButton6)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel6)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addGap(3, 3, 3)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -318,7 +357,7 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 229, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -330,6 +369,11 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         jRadioButton2.setSelected(false);
         jRadioButton3.setSelected(false);
         jRadioButton4.setSelected(false);
+        jRadioButton5.setSelected(false);
+        jRadioButton6.setSelected(false);
+        jRadioButton7.setSelected(false);
+        
+        databaseName = "leaftech";
     }//GEN-LAST:event_jRadioButton1ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
@@ -337,6 +381,11 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         jRadioButton2.setSelected(false);
         jRadioButton3.setSelected(true);
         jRadioButton4.setSelected(false);
+        jRadioButton5.setSelected(false);
+        jRadioButton6.setSelected(false);
+        jRadioButton7.setSelected(false);
+        
+        databaseName = "leaftech";
     }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
@@ -344,6 +393,11 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         jRadioButton2.setSelected(true);
         jRadioButton3.setSelected(false);
         jRadioButton4.setSelected(false);
+        jRadioButton5.setSelected(false);
+        jRadioButton6.setSelected(false);
+        jRadioButton7.setSelected(false);
+        
+        databaseName = "leaftech";
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
     private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
@@ -351,6 +405,11 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         jRadioButton2.setSelected(false);
         jRadioButton3.setSelected(false);
         jRadioButton4.setSelected(true);
+        jRadioButton5.setSelected(false);
+        jRadioButton6.setSelected(false);
+        jRadioButton7.setSelected(false);
+        
+        databaseName = "leaftech";
     }//GEN-LAST:event_jRadioButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -376,7 +435,13 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         jTextArea1.setText("");
           
         // Check to make sure a radio button is selected   
-        if (!jRadioButton1.isSelected() && !jRadioButton2.isSelected() && !jRadioButton3.isSelected() && !jRadioButton4.isSelected())
+        if (!jRadioButton1.isSelected() && 
+                !jRadioButton2.isSelected() && 
+                !jRadioButton3.isSelected() && 
+                !jRadioButton4.isSelected() &&
+                !jRadioButton5.isSelected() &&
+                !jRadioButton6.isSelected() &&
+                !jRadioButton7.isSelected())
         {
             fieldError = true;
             msgString = "Must select a category radio button.";
@@ -437,7 +502,7 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
 
                 //define the data source
                 String SQLServerIP = jTextField1.getText();
-                String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/leaftech";
+                String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/" + databaseName;
 
                 msgString = ">> Establishing connection with: " + sourceURL + "...";
                 jTextArea1.append("\n"+msgString);
@@ -523,6 +588,36 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
                     
                     tableSelected = "REFERENCE MATERIALS";
                 }
+                
+                if (jRadioButton5.isSelected())
+                {
+                    SQLstatement = ( "INSERT INTO trees (product_code, " +
+                            "description, quantity, price) VALUES ( '" +
+                            productID + "', " + "'" + description + "', " +
+                            quantity + ", " + perUnitCost + ");");
+                    
+                    tableSelected = "TREES";
+                }
+                
+                if (jRadioButton6.isSelected())
+                {
+                    SQLstatement = ( "INSERT INTO seeds (product_code, " +
+                            "description, quantity, price) VALUES ( '" +
+                            productID + "', " + "'" + description + "', " +
+                            quantity + ", " + perUnitCost + ");");
+                    
+                    tableSelected = "SEEDS";
+                }
+                
+                if (jRadioButton7.isSelected())
+                {
+                    SQLstatement = ( "INSERT INTO shrubs (product_code, " +
+                            "description, quantity, price) VALUES ( '" +
+                            productID + "', " + "'" + description + "', " +
+                            quantity + ", " + perUnitCost + ");");
+                    
+                    tableSelected = "SHRUBS";
+                }
 
                 // execute the update
                 executeUpdateVal = s.executeUpdate(SQLstatement);
@@ -562,7 +657,13 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         java.sql.Statement s = null;    // SQL statement pointer
 
         // Check to make sure a radio button is selected
-        if (jRadioButton1.isSelected() || jRadioButton2.isSelected() || jRadioButton3.isSelected() || jRadioButton4.isSelected())
+        if (jRadioButton1.isSelected() || 
+                jRadioButton2.isSelected() || 
+                jRadioButton3.isSelected() || 
+                jRadioButton4.isSelected() ||
+                jRadioButton5.isSelected() ||
+                jRadioButton6.isSelected() ||
+                jRadioButton7.isSelected())
         {
             fieldError = false;
             
@@ -596,7 +697,7 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
 
                 //define the data source
                 String SQLServerIP = jTextField1.getText();
-                String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/leaftech";
+                String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/" + databaseName;
 
                 msgString = ">> Establishing connection with: " + sourceURL + "...";
                 jTextArea1.append("\n"+msgString);
@@ -652,6 +753,25 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
                     res = s.executeQuery( "Select * from referencematerials" );
                     tableSelected = "REFERENCE MATERIALS";
                 }
+                // ... here is the SQL for trees
+                if (jRadioButton5.isSelected())
+                {
+                    res = s.executeQuery( "Select * from trees" );
+                    tableSelected = "TREE";
+                }
+                // ... here is the SQL for seeds
+                if (jRadioButton6.isSelected())
+                {
+                    res = s.executeQuery( "Select * from seeds" );
+                    tableSelected = "SEED";
+                }
+                // ... here is the SQL for shrubs
+                if (jRadioButton7.isSelected())
+                {
+                    res = s.executeQuery( "Select * from shrubs" );
+                    tableSelected = "SHRUB";
+                }
+                
 
                 // Now we list the inventory for the selected table
                 jTextArea1.setText("");
@@ -736,7 +856,7 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
 
                     //define the data source
                     String SQLServerIP = jTextField1.getText();
-                    String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/leaftech";
+                    String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/" + databaseName;
 
                     //create a connection to the db
                     DBConn = DriverManager.getConnection(sourceURL,"remote","remote_pass");
@@ -780,6 +900,24 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
                         if (jRadioButton4.isSelected())
                         {
                             SQLstatement = ( "DELETE FROM referencematerials WHERE productid = '" + productID + "';");
+                        }
+                        
+                        // if trees inventory selected
+                        if (jRadioButton5.isSelected())
+                        {
+                            SQLstatement = ( "DELETE FROM trees WHERE product_code = '" + productID + "';");
+                        }
+
+                        // if seeds inventory selected
+                        if (jRadioButton6.isSelected())
+                        {
+                            SQLstatement = ( "DELETE FROM seeds WHERE product_code = '" + productID + "';");
+                        }
+                        
+                        // if shrubs inventory selected
+                        if (jRadioButton7.isSelected())
+                        {
+                            SQLstatement = ( "DELETE FROM shrubs WHERE product_code = '" + productID + "';");
                         }
 
                         // execute the delete query
@@ -880,7 +1018,7 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
 
                     //define the data source
                     String SQLServerIP = jTextField1.getText();
-                    String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/leaftech";
+                    String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/" + databaseName;
 
                     //create a connection to the db
                     DBConn = DriverManager.getConnection(sourceURL,"remote","remote_pass");
@@ -933,6 +1071,30 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
                             SQLstatement2 = ("SELECT * from referencematerials where productid = '" + productID + "';");
                             tableSelected = "REFERENCE MATERIALS";
                         }
+                        
+                        // if trees inventory selected
+                        if (jRadioButton5.isSelected())
+                        {
+                            SQLstatement1 = ("UPDATE trees set quantity=(quantity-1) where product_code = '" + productID + "';");
+                            SQLstatement2 = ("SELECT * from trees where product_code = '" + productID + "';");
+                            tableSelected = "TREES";
+                        }
+
+                        // if seeds inventory selected
+                        if (jRadioButton6.isSelected())
+                        {
+                            SQLstatement1 = ("UPDATE seeds set quantity=(quantity-1) where product_code = '" + productID + "';");
+                            SQLstatement2 = ("SELECT * from seeds where product_code = '" + productID + "';");
+                            tableSelected = "SEEDS";
+                        }
+                        
+                        // if strubs inventory selected
+                        if (jRadioButton7.isSelected())
+                        {
+                            SQLstatement1 = ("UPDATE shrubs set quantity=(quantity-1) where product_code = '" + productID + "';");
+                            SQLstatement2 = ("SELECT * from shrubs where product_code = '" + productID + "';");
+                            tableSelected = "SHRUBS";
+                        }
 
                         // execute the update, then query the BD for the table entry for the item just changed
                         // and display it for the user
@@ -980,6 +1142,42 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jRadioButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton5ActionPerformed
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        jRadioButton3.setSelected(false);
+        jRadioButton4.setSelected(false);
+        jRadioButton5.setSelected(true);
+        jRadioButton6.setSelected(false);
+        jRadioButton7.setSelected(false);
+        
+        databaseName = "inventory";
+    }//GEN-LAST:event_jRadioButton5ActionPerformed
+
+    private void jRadioButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton6ActionPerformed
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        jRadioButton3.setSelected(false);
+        jRadioButton4.setSelected(false);
+        jRadioButton5.setSelected(false);
+        jRadioButton6.setSelected(true);
+        jRadioButton7.setSelected(false);
+        
+        databaseName = "inventory";
+    }//GEN-LAST:event_jRadioButton6ActionPerformed
+
+    private void jRadioButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton7ActionPerformed
+        jRadioButton1.setSelected(false);
+        jRadioButton2.setSelected(false);
+        jRadioButton3.setSelected(false);
+        jRadioButton4.setSelected(false);
+        jRadioButton5.setSelected(false);
+        jRadioButton6.setSelected(false);
+        jRadioButton7.setSelected(true);
+        
+        databaseName = "inventory";
+    }//GEN-LAST:event_jRadioButton7ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -1012,6 +1210,9 @@ public class InventoryManagerFrame extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
