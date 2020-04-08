@@ -69,6 +69,10 @@ public class NewJFrame extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         jTextArea4 = new javax.swing.JTextArea();
         jLabel13 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -171,6 +175,34 @@ public class NewJFrame extends javax.swing.JFrame {
 
         jLabel13.setText("SELECT ENTIRE INVENTORY LINE TO ADD ITEM TO ORDER (TRIPLE CLICK)");
 
+        jButton6.setText("Culture Boxes");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Processing");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        jButton8.setText("Genomics");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Reference Materials");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -185,7 +217,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,24 +232,31 @@ public class NewJFrame extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jScrollPane1)
                                             .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel4)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel11))
+                                            .addComponent(jScrollPane2)
+                                            .addComponent(jScrollPane3)
+                                            .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel4)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGap(10, 10, 10)
+                                                        .addComponent(jLabel2))
                                                     .addGroup(layout.createSequentialGroup()
                                                         .addComponent(jButton1)
-                                                        .addGap(161, 161, 161)
-                                                        .addComponent(jButton2)))
-                                                .addGap(166, 166, 166)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jButton3)
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
-                                                        .addComponent(jLabel11))))
-                                            .addComponent(jScrollPane2)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGap(10, 10, 10)
-                                                .addComponent(jLabel2)
-                                                .addGap(0, 0, Short.MAX_VALUE))
-                                            .addComponent(jScrollPane3))
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton2)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton3)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton6)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton7)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton8)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(jButton9)))
+                                                .addGap(0, 69, Short.MAX_VALUE)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(9, 9, 9)
@@ -256,8 +295,12 @@ public class NewJFrame extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton1)
                         .addComponent(jButton2)
-                        .addComponent(jButton3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton6)
+                        .addComponent(jButton8)
+                        .addComponent(jButton9)
+                        .addComponent(jButton3)
+                        .addComponent(jButton7)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel13)
                 .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -297,7 +340,7 @@ public class NewJFrame extends javax.swing.JFrame {
                         .addComponent(jLabel2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(142, Short.MAX_VALUE))
+                .addContainerGap(137, Short.MAX_VALUE))
         );
 
         pack();
@@ -873,6 +916,318 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // jButton6 is responsible for querying the leaftech database and
+        // getting the culture boxes inventory. Once retieved, the culture boxes inventory is
+        // displayed in jTextArea1. From here the user can select an inventory
+        // item by triple clicking the item.
+
+        Boolean connectError = false;       // Error flag
+        Connection DBConn = null;           // MySQL connection handle
+        String errString = null;            // String for displaying errors
+        String msgString = null;            // String for displaying non-error messages
+        ResultSet res = null;               // SQL query result set pointer
+        Statement s = null;                 // SQL statement pointer
+
+        // Connect to the inventory database
+        try
+        {
+            msgString = ">> Establishing Driver...";
+            jTextArea1.setText("\n"+msgString);
+
+            //load JDBC driver class for MySQL
+            Class.forName( "com.mysql.jdbc.Driver" );
+
+            msgString = ">> Setting up URL...";
+            jTextArea1.append("\n"+msgString);
+
+            //define the data source
+            String SQLServerIP = jTextField1.getText();
+            String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/leaftech";
+
+            msgString = ">> Establishing connection with: " + sourceURL + "...";
+            jTextArea1.append("\n"+msgString);
+
+            //create a connection to the db - note the default account is "remote"
+            //and the password is "remote_pass" - you will have to set this
+            //account up in your database
+
+            DBConn = DriverManager.getConnection(sourceURL,"remote","remote_pass");
+
+        } catch (Exception e) {
+
+            errString =  "\nProblem connecting to database:: " + e;
+            jTextArea1.append(errString);
+            connectError = true;
+
+        } // end try-catch
+
+        // If we are connected, then we get the list of shrubs from the
+        // inventory database
+
+        if ( !connectError )
+        {
+            try
+            {
+                s = DBConn.createStatement();
+                res = s.executeQuery( "Select * from cultureboxes" );
+
+                //Display the data in the textarea
+
+                jTextArea1.setText("");
+
+                while (res.next())
+                {
+                    msgString = res.getString(1) + " : " + res.getString(2) +
+                            " : $"+ res.getString(4) + " : " + res.getString(3)
+                            + " units in stock";
+                    jTextArea1.append(msgString+"\n");
+
+                } // while
+
+            } catch (Exception e) {
+
+                errString =  "\nProblem getting culture boxes inventory:: " + e;
+                jTextArea1.append(errString);
+
+            } // end try-catch
+        } // if connect check
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // jButton7 is responsible for querying the leaftech database and
+        // getting the processing inventory. Once retieved, the processing inventory is
+        // displayed in jTextArea1. From here the user can select an inventory
+        // item by triple clicking the item.
+
+        Boolean connectError = false;       // Error flag
+        Connection DBConn = null;           // MySQL connection handle
+        String errString = null;            // String for displaying errors
+        String msgString = null;            // String for displaying non-error messages
+        ResultSet res = null;               // SQL query result set pointer
+        Statement s = null;                 // SQL statement pointer
+
+        // Connect to the inventory database
+        try
+        {
+            msgString = ">> Establishing Driver...";
+            jTextArea1.setText("\n"+msgString);
+
+            //load JDBC driver class for MySQL
+            Class.forName( "com.mysql.jdbc.Driver" );
+
+            msgString = ">> Setting up URL...";
+            jTextArea1.append("\n"+msgString);
+
+            //define the data source
+            String SQLServerIP = jTextField1.getText();
+            String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/leaftech";
+
+            msgString = ">> Establishing connection with: " + sourceURL + "...";
+            jTextArea1.append("\n"+msgString);
+
+            //create a connection to the db - note the default account is "remote"
+            //and the password is "remote_pass" - you will have to set this
+            //account up in your database
+
+            DBConn = DriverManager.getConnection(sourceURL,"remote","remote_pass");
+
+        } catch (Exception e) {
+
+            errString =  "\nProblem connecting to database:: " + e;
+            jTextArea1.append(errString);
+            connectError = true;
+
+        } // end try-catch
+
+        // If we are connected, then we get the list of shrubs from the
+        // inventory database
+
+        if ( !connectError )
+        {
+            try
+            {
+                s = DBConn.createStatement();
+                res = s.executeQuery( "Select * from processing" );
+
+                //Display the data in the textarea
+
+                jTextArea1.setText("");
+
+                while (res.next())
+                {
+                    msgString = res.getString(1) + " : " + res.getString(2) +
+                            " : $"+ res.getString(4) + " : " + res.getString(3)
+                            + " units in stock";
+                    jTextArea1.append(msgString+"\n");
+
+                } // while
+
+            } catch (Exception e) {
+
+                errString =  "\nProblem getting processing inventory:: " + e;
+                jTextArea1.append(errString);
+
+            } // end try-catch
+        } // if connect check
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // jButton8 is responsible for querying the leaftech database and
+        // getting the genomics inventory. Once retieved, the genomics inventory is
+        // displayed in jTextArea1. From here the user can select an inventory
+        // item by triple clicking the item.
+
+        Boolean connectError = false;       // Error flag
+        Connection DBConn = null;           // MySQL connection handle
+        String errString = null;            // String for displaying errors
+        String msgString = null;            // String for displaying non-error messages
+        ResultSet res = null;               // SQL query result set pointer
+        Statement s = null;                 // SQL statement pointer
+
+        // Connect to the inventory database
+        try
+        {
+            msgString = ">> Establishing Driver...";
+            jTextArea1.setText("\n"+msgString);
+
+            //load JDBC driver class for MySQL
+            Class.forName( "com.mysql.jdbc.Driver" );
+
+            msgString = ">> Setting up URL...";
+            jTextArea1.append("\n"+msgString);
+
+            //define the data source
+            String SQLServerIP = jTextField1.getText();
+            String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/leaftech";
+
+            msgString = ">> Establishing connection with: " + sourceURL + "...";
+            jTextArea1.append("\n"+msgString);
+
+            //create a connection to the db - note the default account is "remote"
+            //and the password is "remote_pass" - you will have to set this
+            //account up in your database
+
+            DBConn = DriverManager.getConnection(sourceURL,"remote","remote_pass");
+
+        } catch (Exception e) {
+
+            errString =  "\nProblem connecting to database:: " + e;
+            jTextArea1.append(errString);
+            connectError = true;
+
+        } // end try-catch
+
+        // If we are connected, then we get the list of shrubs from the
+        // inventory database
+
+        if ( !connectError )
+        {
+            try
+            {
+                s = DBConn.createStatement();
+                res = s.executeQuery( "Select * from genomics" );
+
+                //Display the data in the textarea
+
+                jTextArea1.setText("");
+
+                while (res.next())
+                {
+                    msgString = res.getString(1) + " : " + res.getString(2) +
+                            " : $"+ res.getString(4) + " : " + res.getString(3)
+                            + " units in stock";
+                    jTextArea1.append(msgString+"\n");
+
+                } // while
+
+            } catch (Exception e) {
+
+                errString =  "\nProblem getting genomics inventory:: " + e;
+                jTextArea1.append(errString);
+
+            } // end try-catch
+        } // if connect check
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        // jButton8 is responsible for querying the leaftech database and
+        // getting the reference materials inventory. Once retieved, the reference materials inventory is
+        // displayed in jTextArea1. From here the user can select an inventory
+        // item by triple clicking the item.
+
+        Boolean connectError = false;       // Error flag
+        Connection DBConn = null;           // MySQL connection handle
+        String errString = null;            // String for displaying errors
+        String msgString = null;            // String for displaying non-error messages
+        ResultSet res = null;               // SQL query result set pointer
+        Statement s = null;                 // SQL statement pointer
+
+        // Connect to the inventory database
+        try
+        {
+            msgString = ">> Establishing Driver...";
+            jTextArea1.setText("\n"+msgString);
+
+            //load JDBC driver class for MySQL
+            Class.forName( "com.mysql.jdbc.Driver" );
+
+            msgString = ">> Setting up URL...";
+            jTextArea1.append("\n"+msgString);
+
+            //define the data source
+            String SQLServerIP = jTextField1.getText();
+            String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/leaftech";
+
+            msgString = ">> Establishing connection with: " + sourceURL + "...";
+            jTextArea1.append("\n"+msgString);
+
+            //create a connection to the db - note the default account is "remote"
+            //and the password is "remote_pass" - you will have to set this
+            //account up in your database
+
+            DBConn = DriverManager.getConnection(sourceURL,"remote","remote_pass");
+
+        } catch (Exception e) {
+
+            errString =  "\nProblem connecting to database:: " + e;
+            jTextArea1.append(errString);
+            connectError = true;
+
+        } // end try-catch
+
+        // If we are connected, then we get the list of shrubs from the
+        // inventory database
+
+        if ( !connectError )
+        {
+            try
+            {
+                s = DBConn.createStatement();
+                res = s.executeQuery( "Select * from referencematerials" );
+
+                //Display the data in the textarea
+
+                jTextArea1.setText("");
+
+                while (res.next())
+                {
+                    msgString = res.getString(1) + " : " + res.getString(2) +
+                            " : $"+ res.getString(4) + " : " + res.getString(3)
+                            + " units in stock";
+                    jTextArea1.append(msgString+"\n");
+
+                } // while
+
+            } catch (Exception e) {
+
+                errString =  "\nProblem getting reference materials inventory:: " + e;
+                jTextArea1.append(errString);
+
+            } // end try-catch
+        } // if connect check
+    }//GEN-LAST:event_jButton9ActionPerformed
+
     /**
     * @param args the command line arguments
     */
@@ -890,6 +1245,10 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
