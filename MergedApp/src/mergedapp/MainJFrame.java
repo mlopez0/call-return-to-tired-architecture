@@ -8,6 +8,7 @@ package mergedapp;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.sql.*;
 
 /**
  *
@@ -52,6 +53,16 @@ public class MainJFrame extends javax.swing.JFrame {
         });
 
         jTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField2KeyPressed(evt);
+            }
+        });
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setLabelFor(jTextField1);
@@ -111,17 +122,133 @@ public class MainJFrame extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String login = jTextField1.getText();
         String password = jTextField2.getText();
+        String databaseName = null;
+        String msgString = "";
+        String whole_err = "";
+        Boolean fieldError = false;
+        // CONNECTION PARAMETERS
+
+        Boolean connectError = false;   // Error flag
+        Connection DBConn = null;       // MySQL connection handle
+        String description;             // Inventory item description
+        Boolean executeError = false;   // Error flag
+        String errString = null;        // String for displaying errors
+        int executeUpdateVal;           // Return value from execute indicating effected rows
+        ResultSet res = null;           // SQL query result set pointer
+        String tableSelected = null;    // String used to determine which data table to use
+        Integer quantity;               // Quantity of inventory item
+        Float perUnitCost;              // Cost per unit item
+        String productID = null;        // Product id of item
+        java.sql.Statement s = null;    // SQL statement pointer
+        String SQLstatement = null;     // String for building SQL queries
         
-        // TODO: connect to MySQL database and validate user credentials
         
-        if (login.equals("user") && password.equals("user")) {
-            this.setVisible(false);
-            new MenuJFrame().setVisible(true);
+        databaseName = "authentication";
+        
+
+        //Make sure there is a price
+        if ( jTextField1.getText().length() == 0 )
+        {
+            fieldError = true;
+            msgString = "Must enter a user name. ";
+            whole_err = whole_err + msgString;
+        } //else {
+        if ( jTextField2.getText().length() == 0 )
+        {
+            fieldError = true;
+            msgString = "Must enter a Password. ";
+            whole_err = whole_err + msgString;
         }
-        else {
-            javax.swing.JOptionPane.showMessageDialog(null, "Login or password is incorrect");
+ //   }     
+        
+        if (fieldError){
+            javax.swing.JOptionPane.showMessageDialog(null, whole_err);
         }
+        
+     
+        
+        if ( !fieldError )
+        {
+            try
+            {
+                //load JDBC driver class for MySQL
+                Class.forName( "com.mysql.jdbc.Driver" );
+                //define the data source
+                String SQLServerIP = "localhost"; // MUST BE CHANGED TO A VARIABLE FOR WEB ENVIROMENT
+                String sourceURL = "jdbc:mysql://" + SQLServerIP + ":3306/" + databaseName;
+                //create a connection to the db
+                DBConn = DriverManager.getConnection(sourceURL,"remote","remote_pass");
+            javax.swing.JOptionPane.showMessageDialog(null, "connected!");
+
+            } catch (Exception e) {
+
+                errString =  "\nProblem connecting to database:: " + e;
+                connectError = true;
+                javax.swing.JOptionPane.showMessageDialog(null, errString);
+
+            } // end try-catch
+        } // fieldError check        
+        
+        
+
+        if (!connectError && !fieldError )
+        {
+            try
+            {
+                s = DBConn.createStatement();
+                String myquery =  "select UserName, Pass from Users where UserName ='"+ login+"' and Pass = '"+password+"' ;" ;
+                System.out.println(myquery);
+                res = s.executeQuery(myquery);
+                String passN = " ";//res.getString("UserName");
+                String userN = " "; //res.getString("Pass");
+
+              while (res.next()) {
+                        userN = res.getString("UserName");
+                        passN = res.getString("Pass");
+
+                        System.out.println(passN + "\t" + userN);
+                    }
+                System.out.println(login);
+                System.out.println(password);
+                
+                System.out.println(userN);
+                System.out.println(passN);
+
+                if (login.equals(userN) && password.equals(passN)) {
+                    this.setVisible(false);
+                    new MenuJFrame().setVisible(true);
+                }
+                else {
+                    javax.swing.JOptionPane.showMessageDialog(null, "Login or password is incorrect");
+                }
+
+                
+            } catch (Exception e) {
+
+                errString =  "\nProblem with " + tableSelected +" query:: " + e;
+                executeError = true;
+                
+                javax.swing.JOptionPane.showMessageDialog(null,errString);
+
+            } // try
+
+        } //execute SQL check        
+        
+        
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
+
+    private void jTextField2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2KeyPressed
 
     /**
      * @param args the command line arguments
